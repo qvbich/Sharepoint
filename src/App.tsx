@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Paydetail from "./Paydetail";
+import Payment from "./Payment";
+import Validity from "./Validity";
+import styles from "./App.module.scss";
+import { initializeIcons } from "@fluentui/font-icons-mdl2";
 
 function App() {
+  initializeIcons();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className="header-wrapper">
+      <Validity />
+      <Payment />
+      <Paydetail />
+    </section>
   );
 }
-
 export default App;

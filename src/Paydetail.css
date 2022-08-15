@@ -1,0 +1,13 @@
+.textbox-list {
+    display: flex;
+    flex-flow: inherit;
+    width: 56%;
+    justify-content: space-between;
+}
+
+.textbox-details{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-flow: inherit;
+}

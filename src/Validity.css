@@ -1,0 +1,34 @@
+
+.header {
+    width: 100%;
+}
+
+.header-heading {
+    text-align: center;
+    background: #002e97;
+    color: white;
+    font-size: 32px;
+}
+.date-form{
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+
+}
+.ms-DatePicker {width: 45%;}
+
+.chebox-list {
+    display: flex;
+}
+
+.checkbox-items .ms-Checkbox-text {
+    font-weight: bold;
+}
+
+.checkbox-items {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin: 15px 0;
+}
+
