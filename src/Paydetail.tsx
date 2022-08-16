@@ -1,7 +1,7 @@
 import React from "react";
 import { TextField, ITextFieldStyles } from "@fluentui/react/lib/TextField";
 import { Stack } from "@fluentui/react";
-import "./Paydetail.css";
+import "./Mystyle.scss";
 
 function Paydetail() {
   const textFieldStyles: Partial<ITextFieldStyles> = {
@@ -17,7 +17,7 @@ function Paydetail() {
         Paydetail details for taxes / surcharges
       </div>
       <div className="wrapper">
-        <Stack className="textbox-list">
+        <Stack className="textfield-list">
           <TextField
             label="Payment Mode"
             placeholder="Recharge"

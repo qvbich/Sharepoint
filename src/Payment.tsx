@@ -6,7 +6,7 @@ import {
   IDropdownStyles,
   IDropdownOption,
 } from "@fluentui/react/lib/Dropdown";
-import "./Payment.css";
+import "./Mystyle.scss";
 
 function Payment() {
   const dropdownStyles: Partial<IDropdownStyles> = {

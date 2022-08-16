@@ -1,11 +1,6 @@
-import React from "react";
-import {
-  DatePicker,
-  mergeStyleSets,
-  defaultDatePickerStrings,
-} from "@fluentui/react";
+import { DatePicker, mergeStyleSets } from "@fluentui/react";
 import { Checkbox, Stack } from "@fluentui/react";
-import "./Validity.css";
+import "./Mystyle.scss";
 
 function Validity() {
   const stackTokens = { childrenGap: 10 };

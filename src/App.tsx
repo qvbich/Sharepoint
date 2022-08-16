@@ -1,8 +1,7 @@
-import "./App.css";
 import Paydetail from "./Paydetail";
 import Payment from "./Payment";
 import Validity from "./Validity";
-import styles from "./App.module.scss";
+import "./Mystyle.scss";
 import { initializeIcons } from "@fluentui/font-icons-mdl2";
 
 function App() {
