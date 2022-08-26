@@ -9,11 +9,13 @@ import {
 import "./Mystyle.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { fromSlice } from "../redux/reducer";
-import { paymemtSelector } from "../redux/selectors";
+// import { paymemtSelector } from "../redux/selectors";
 
 function Payment() {
   const dispatch = useDispatch();
-  let test = useSelector(paymemtSelector);
+  const storageKey = "paymentSelector";
+
+  // const payment = useSelector(paymemtSelector);
   const dropdownStyles: Partial<IDropdownStyles> = {
     dropdown: { width: 400 },
   };
@@ -29,7 +31,6 @@ function Payment() {
   const [selectMode, setSelectMode] = useState("");
   const handlePayment = (e: any, test: any) => {
     setSelectMode(test.key);
-    sessionStorage.setItem("draft", test.key);
   };
   const options1: IDropdownOption[] = [
     { key: "Recharge", text: "Recharge" },
@@ -39,7 +40,6 @@ function Payment() {
   const [selectCode, setSelectCode] = useState("");
   const handleCode = (e: any, test: any) => {
     setSelectCode(test.key);
-    sessionStorage.setItem("selectCode", test.key);
   };
   const options2: IDropdownOption[] = [
     { key: "FOC 1", text: "FOC 1" },
@@ -68,26 +68,23 @@ function Payment() {
     setAccount(e.target.value);
   };
 
-  // const base = localStorage.getItem("test");
-  // if (base) {
-  //   test = JSON.parse(base);
-  // }
-
   useEffect(() => {
-    localStorage.setItem("test", JSON.stringify(test));
-  });
+    localStorage.setItem(storageKey, JSON.stringify(fromSlice));
+    console.log(localStorage.getItem(storageKey));
+  }, []);
 
   const handleClick = () => {
-    dispatch(
-      fromSlice.actions.submitFrom({
-        mode: selectMode,
-        code: selectCode,
-        amout: amout,
-        current: selectCurrent,
-        cost: cost,
-        account: account,
-      })
-    );
+    const formData = {
+      mode: selectMode,
+      code: selectCode,
+      amout: amout,
+      current: selectCurrent,
+      cost: cost,
+      account: account,
+    };
+
+    dispatch(fromSlice.actions.submitFrom(formData));
+    localStorage.setItem(storageKey, JSON.stringify(formData));
   };
 
   return (
