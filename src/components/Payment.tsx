@@ -9,6 +9,7 @@ import {
 import "./Mystyle.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { fromSlice } from "../redux/reducer";
+import { keyboard } from "@testing-library/user-event/dist/keyboard";
 // import { paymemtSelector } from "../redux/selectors";
 
 function Payment() {
@@ -69,8 +70,14 @@ function Payment() {
   };
 
   useEffect(() => {
-    // localStorage.getItem(storageKey);
-    console.log(localStorage.getItem(storageKey));
+    const formData = JSON.parse(localStorage.getItem(storageKey) ?? "{}");
+    console.log(formData);
+    setSelectMode(formData.mode || "");
+    setSelectCode(formData.code || "");
+    setSelectCurrent(formData.current || "");
+    setAmount(formData.amout || "");
+    setCost(formData.cost || "");
+    setAccount(formData.account || "");
   }, []);
 
   const handleClick = () => {
@@ -93,42 +100,52 @@ function Payment() {
       <div className="wrapper">
         <Stack className="dropdown-list">
           <Dropdown
+            required
             placeholder="Select one below"
             label="Payment Mode"
             options={options1}
+            defaultSelectedKey={selectMode}
             styles={dropdownStyles}
             onChange={handlePayment}
           />
           <Dropdown
+            required
             placeholder="SELECT FOR CODE"
             label="For Control Code"
             options={options2}
+            defaultSelectedKey={selectCode}
             styles={dropdownStyles}
             onChange={handleCode}
           />
         </Stack>
         <Stack className="texbox-list">
           <TextField
+            required
             label="Amount ($)"
             type="number"
+            value={amout}
             styles={textFieldStyles}
             onChange={handleInputChang}
           />
           <Dropdown
+            required
             placeholder="SELECT CURRENCY"
             label="Current"
             options={options3}
+            defaultSelectedKey={selectCurrent}
             styles={dropdown}
             onChange={handleCurrent}
           />
           <TextField
             label="Cost Centre"
             type="number"
+            value={cost}
             styles={textFieldStyles}
             onChange={handleInputCost}
           />
           <TextField
             label="Account Code"
+            value={account}
             styles={textFieldStyles}
             onChange={handleInputAccount}
           />
