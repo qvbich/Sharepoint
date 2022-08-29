@@ -32,6 +32,7 @@ function Paydetail() {
         <Stack className="textbox-details">
           <TextField
             label="Amount ($)"
+            type="number"
             placeholder="43"
             styles={textFieldStyles}
           />
@@ -42,6 +43,7 @@ function Paydetail() {
           />
           <TextField
             label="Cost centre"
+            type="number"
             placeholder="234234"
             styles={textFieldStyles}
           />

@@ -13,7 +13,7 @@ import { fromSlice } from "../redux/reducer";
 
 function Payment() {
   const dispatch = useDispatch();
-  const storageKey = "paymentSelector";
+  const storageKey = "paymemtSelector";
 
   // const payment = useSelector(paymemtSelector);
   const dropdownStyles: Partial<IDropdownStyles> = {
@@ -51,8 +51,8 @@ function Payment() {
     setSelectCurrent(test.key);
   };
   const options3: IDropdownOption[] = [
-    { key: "Option-1", text: "Option-1" },
-    { key: "Option-2", text: "Option-2" },
+    { key: "VND", text: "VND" },
+    { key: "USD", text: "USD" },
   ];
 
   const [amout, setAmount] = useState("");
@@ -69,7 +69,7 @@ function Payment() {
   };
 
   useEffect(() => {
-    localStorage.setItem(storageKey, JSON.stringify(fromSlice));
+    // localStorage.getItem(storageKey);
     console.log(localStorage.getItem(storageKey));
   }, []);
 
@@ -110,6 +110,7 @@ function Payment() {
         <Stack className="texbox-list">
           <TextField
             label="Amount ($)"
+            type="number"
             styles={textFieldStyles}
             onChange={handleInputChang}
           />
@@ -122,6 +123,7 @@ function Payment() {
           />
           <TextField
             label="Cost Centre"
+            type="number"
             styles={textFieldStyles}
             onChange={handleInputCost}
           />
