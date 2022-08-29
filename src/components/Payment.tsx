@@ -7,16 +7,13 @@ import {
   IDropdownOption,
 } from "@fluentui/react/lib/Dropdown";
 import "./Mystyle.scss";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { fromSlice } from "../redux/reducer";
-import { keyboard } from "@testing-library/user-event/dist/keyboard";
-// import { paymemtSelector } from "../redux/selectors";
 
 function Payment() {
   const dispatch = useDispatch();
   const storageKey = "paymemtSelector";
 
-  // const payment = useSelector(paymemtSelector);
   const dropdownStyles: Partial<IDropdownStyles> = {
     dropdown: { width: 400 },
   };

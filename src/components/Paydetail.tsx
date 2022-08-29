@@ -19,11 +19,13 @@ function Paydetail() {
       <div className="wrapper">
         <Stack className="textfield-list">
           <TextField
+            required
             label="Payment Mode"
             placeholder="Recharge"
             styles={textFieldStyles}
           />
           <TextField
+            required
             label="Foc control code"
             placeholder="123456789"
             styles={textFieldStyles}
@@ -31,12 +33,14 @@ function Paydetail() {
         </Stack>
         <Stack className="textbox-details">
           <TextField
+            required
             label="Amount ($)"
             type="number"
             placeholder="43"
             styles={textFieldStyles}
           />
           <TextField
+            required
             label="Currency"
             placeholder="SGD"
             styles={textFieldCurrency}

@@ -24,6 +24,7 @@ export const fromSlice = createSlice({
   reducers: {
     submitFrom: (state, action) => {
       state.paymemt = action.payload;
+      state.payDetails = action.payload;
     },
   },
 });
