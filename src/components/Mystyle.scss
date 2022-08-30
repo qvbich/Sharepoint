@@ -1,14 +1,15 @@
 body{
-    // margin: 15px auto;
-    // width: 80%;
     
-    .header-wrapper{
-        // background: #cae1f5;
-        padding: 10px;
-        // margin: 20px 0;
-      }
+    // .header-wrapper{
+    //     padding: 10px;
+    //   }
     .wrapper {
         margin: 15px;
+      }
+      .textfield-list .ms-TextField-fieldGroup, .textbox-details .ms-TextField-fieldGroup {
+        background-color: #ebeef1;
+        color: #999fa5;
+        border-radius: 5px;
       }
 
       label{
@@ -17,14 +18,14 @@ body{
       }
       
 .header {
-    border: groove 1px;
+    border: solid 1px;
     margin: 10px 0;
     background:white;
     border-radius: 5px;
 
 .header-heading {
     text-align: center;
-    background: #002e97;
+    background: #012c7b;
     color: white;
     font-size: 32px;
 }
@@ -41,14 +42,14 @@ body{
 .checkbox-items {
     display: flex;
     justify-content: space-around;
-    width: 50%;
+    width: 40%;
     margin: 15px 0;
 }
 
 .dropdown-list {
     display: flex;
     flex-flow: inherit;
-    width: 58%;
+    width: 60%;
     justify-content: space-between;
 
     .ms-Dropdown-container{

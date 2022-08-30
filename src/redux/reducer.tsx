@@ -28,17 +28,3 @@ export const fromSlice = createSlice({
     },
   },
 });
-
-// const rootReducer = (state = { initState }, action: any) => {
-//   switch (action.type) {
-//     case "payOption":
-//       return {
-//         ...state,
-//         payDetails: [action.payload],
-//       };
-//     default:
-//       return state;
-//   }
-// };
-
-// export default rootReducer;
